@@ -42,15 +42,15 @@ public class QuizOptionCard : MonoBehaviour
 		if (responseRequest.responseHeaders["STATUS"] == HTML.HTTP_200)
 		{
 			if (currentQuiz.HasCorrectAnswer())
-				AlertsService.makeAlert("Resposta enviada", "Se você marcou a alternativa correta, será recompensado(a) com folhas em breve!", "");
+				AlertsService.makeAlert("Resposta enviada", "Se você marcou a alternativa correta, será recompensado(a) com inoves em breve!", "");
 			else
-				AlertsService.makeAlert("Resposta enviada", "Um gestor analisará sua resposta e o(a) recompensará com folhas se a resposta for válida.", "");
+				AlertsService.makeAlert("Resposta enviada", "Um gestor analisará sua resposta e o(a) recompensará com inoves se a resposta for válida.", "");
 
 			yield return new WaitForSeconds(4f);
 			SceneManager.LoadScene("Quizzes");
 			yield return null;
 		}
-		else 
+		else
 		{
 			AlertsService.makeAlert("Falha na conexão", "Tente novamente mais tarde.", "Entendi");
 			SceneManager.LoadScene("Home");
